@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
 
   def search
     @q = Item.ransack(params[:q])  #ransack 検索オブジェクトの作成, params[:q]...ransackを使用したフォームから送られてきたパラメーターを受け取る
-    @itmes = @q.result  #result 検索結果を取得する
+    @items = @q.result  #result 検索結果を取得する
   end
 
   private
