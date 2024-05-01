@@ -12,4 +12,9 @@ class Item < ApplicationRecord
   end
 
   validates :category_id, numericality: { greater_than_or_equal_to:1 ,less_than_or_equal_to:10, message: "is invalid" }
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["name", "price", "category_id"]
+  end
+
 end
